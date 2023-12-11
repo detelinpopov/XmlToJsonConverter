@@ -21,7 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Core\Core.csproj" />
-    <ProjectReference Include="..\XMLFileConverter\XMLFileConverterAPI.csproj" />
+    <ProjectReference Include="..\FileConverterAPI\FileConverterAPI.csproj" />
   </ItemGroup>
 
 </Project>

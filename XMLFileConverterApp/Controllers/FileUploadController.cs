@@ -23,7 +23,7 @@ public class FileUploadController : Controller
             return PartialView("~/Views/FileUpload/FileUploadFailed.cshtml", invalidXmlResultModel);
         }
 
-        const string uploadFileApiUrl = "https://localhost:7043/api/FileUpload/UploadFile";
+        const string uploadFileApiUrl = "https://localhost:7127/api/FileUpload/UploadFile";
         var fileUploadResult = await HttpRequestHelper.CallApiToUploadFileAsync(fileUpload, _httpClient, uploadFileApiUrl);
 
         if (fileUploadResult.Success)

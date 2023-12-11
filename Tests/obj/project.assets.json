@@ -2082,6 +2082,25 @@
           "bin/placeholder/Domain.dll": {}
         }
       },
+      "FileConverterAPI/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Core": "1.0.0",
+          "Interfaces": "1.0.0",
+          "Microsoft.AspNetCore.OpenApi": "7.0.14",
+          "Swashbuckle.AspNetCore": "6.5.0"
+        },
+        "compile": {
+          "bin/placeholder/FileConverterAPI.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FileConverterAPI.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "Interfaces/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -2095,25 +2114,6 @@
         "runtime": {
           "bin/placeholder/Interfaces.dll": {}
         }
-      },
-      "XMLFileConverterAPI/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Core": "1.0.0",
-          "Interfaces": "1.0.0",
-          "Microsoft.AspNetCore.OpenApi": "7.0.14",
-          "Swashbuckle.AspNetCore": "6.5.0"
-        },
-        "compile": {
-          "bin/placeholder/XMLFileConverterAPI.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/XMLFileConverterAPI.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
       }
     }
   },
@@ -6610,26 +6610,26 @@
       "path": "../Domain/Domain.csproj",
       "msbuildProject": "../Domain/Domain.csproj"
     },
+    "FileConverterAPI/1.0.0": {
+      "type": "project",
+      "path": "../FileConverterAPI/FileConverterAPI.csproj",
+      "msbuildProject": "../FileConverterAPI/FileConverterAPI.csproj"
+    },
     "Interfaces/1.0.0": {
       "type": "project",
       "path": "../Interfaces/Interfaces.csproj",
       "msbuildProject": "../Interfaces/Interfaces.csproj"
-    },
-    "XMLFileConverterAPI/1.0.0": {
-      "type": "project",
-      "path": "../XMLFileConverter/XMLFileConverterAPI.csproj",
-      "msbuildProject": "../XMLFileConverter/XMLFileConverterAPI.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
       "Core >= 1.0.0",
+      "FileConverterAPI >= 1.0.0",
       "Microsoft.AspNetCore.Http >= 2.2.2",
       "Microsoft.AspNetCore.Http.Features >= 5.0.17",
       "Microsoft.Extensions.Configuration.Abstractions >= 8.0.0",
       "Microsoft.NET.Test.Sdk >= 17.8.0",
       "Moq >= 4.20.70",
-      "XMLFileConverterAPI >= 1.0.0",
       "xunit >= 2.6.2",
       "xunit.runner.visualstudio >= 2.5.4"
     ]
@@ -6670,8 +6670,8 @@
             "C:\\Users\\Detelin_Popov\\Desktop\\XmlToJsonConverter\\Core\\Core.csproj": {
               "projectPath": "C:\\Users\\Detelin_Popov\\Desktop\\XmlToJsonConverter\\Core\\Core.csproj"
             },
-            "C:\\Users\\Detelin_Popov\\Desktop\\XmlToJsonConverter\\XMLFileConverter\\XMLFileConverterAPI.csproj": {
-              "projectPath": "C:\\Users\\Detelin_Popov\\Desktop\\XmlToJsonConverter\\XMLFileConverter\\XMLFileConverterAPI.csproj"
+            "C:\\Users\\Detelin_Popov\\Desktop\\XmlToJsonConverter\\FileConverterAPI\\FileConverterAPI.csproj": {
+              "projectPath": "C:\\Users\\Detelin_Popov\\Desktop\\XmlToJsonConverter\\FileConverterAPI\\FileConverterAPI.csproj"
             }
           }
         }
