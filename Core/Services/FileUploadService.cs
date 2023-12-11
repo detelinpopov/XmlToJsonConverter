@@ -1,4 +1,5 @@
-﻿using Domain.Enums;
+﻿using Core.Constants;
+using Domain.Enums;
 using Domain.Models;
 using Interfaces.Services;
 
@@ -30,7 +31,7 @@ public class FileUploadService : IFileUploadService
                 Success = false,
                 Errors = new List<ErrorModel>
                 {
-                    new(){ ErrorMessage = "An error occurred while saving the JSON file.", ErrorType = ErrorType.UploadFile}
+                    new(){ ErrorMessage = UserMessages.SaveJsonFileError, ErrorType = ErrorType.UploadFile}
                 }
             };
 
