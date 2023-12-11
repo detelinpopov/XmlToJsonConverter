@@ -1,0 +1,4 @@
+﻿@model FileUploadResultModel
+<div id="file-upload-failed"></div>
+<div class="error-message">@(Model.ResponseMessage == null ? "An error occurred while uploading your file." : Model.ResponseMessage)</div>
+

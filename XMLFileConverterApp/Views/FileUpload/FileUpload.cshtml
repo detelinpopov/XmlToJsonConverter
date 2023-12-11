@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "XML File Converter";
+    Layout = null;
+}
+<head>
+    <title>XML File Converter</title>
+    <link href="/css/site.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div class="heading">
+    XML to JSON File Converter
+</div>
+<div>
+    <label class="file-upload">
+        <input data-upload-file-url="@Url.Action("UploadFile")" id="fileUpload" type="file" name="fileUpload" class="file-upload"/>
+        Choose XML File
+    </label>
+    <span id="file-name"></span>
+</div>
+<div id="file-upload-result">
+</div>
+<div id="upload-button-container">
+    @await Html.PartialAsync("UploadFileButton")
+</div>
+<script src="/lib/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="/js/fileUpload.js"></script>
+</body>

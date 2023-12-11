@@ -1,0 +1,239 @@
+html { font-size: 14px; }
+
+@media (min-width: 768px) {
+    html { font-size: 16px; }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus { box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb; }
+
+html {
+    min-height: 100%;
+    position: relative;
+}
+
+body { margin-bottom: 60px; }
+
+.success-message {
+    color: green;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+.error-message {
+    color: red;
+    font-weight: bold;
+    padding-top: 5px;
+}
+
+/* Upload File Button */
+
+.activate {
+    background: #5628EE;
+    border-radius: 22px;
+    box-shadow: 0 4px 20px rgba(86, 40, 238, 0.15);
+    color: #fff;
+    cursor: pointer;
+    display: table;
+    font-weight: 500;
+    line-height: 20px;
+    padding: 12px;
+    transition: transform 0.2s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.activate span {
+    background: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    height: 20px;
+    margin: 0 4px 0 0;
+    overflow: hidden;
+    position: relative;
+    vertical-align: top;
+    width: 20px;
+}
+
+.activate span:before {
+    background: #5628EE;
+    border-radius: 50%;
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: scale(0);
+    transition: transform 0.3s ease, background 0.3s ease;
+    width: 100%;
+}
+
+.activate span svg {
+    height: 12px;
+    left: 50%;
+    margin: -6px 0 0 -6px;
+    position: absolute;
+    top: 50%;
+    width: 12px;
+    z-index: 1;
+}
+
+.activate span svg:nth-child(1) {
+    fill: none;
+    height: 20px;
+    left: 0;
+    margin: 0;
+    stroke: #fff;
+    stroke-dasharray: 47.124;
+    stroke-dashoffset: 94.248;
+    stroke-width: 1px;
+    top: 0;
+    width: 20px;
+}
+
+.activate span svg:nth-child(2) {
+    fill: #5628EE;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.activate span svg:nth-child(3) {
+    fill: #5628EE;
+    transform: translateY(20px);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
+}
+
+.activate:hover { box-shadow: 0 8px 24px rgba(86, 40, 238, 0.15); }
+
+.activate:hover span svg:nth-child(2) { transform: translateY(-20px); }
+
+.activate:hover span svg:nth-child(3) { transform: translateY(0); }
+
+.activate:active {
+    box-shadow: 0 4px 16px rgba(63, 220, 117, 0.18);
+    transform: scale(0.94);
+}
+
+.activate.loading span {
+    background: none;
+    transition: background 0.1s ease 0.3s;
+}
+
+.activate.loading span:before { transform: scale(1); }
+
+.activate.loading span svg:nth-child(1) {
+    -webkit-animation: turn 1.6s linear infinite forwards, path 1.6s linear infinite forwards;
+    animation: turn 1.6s linear infinite forwards, path 1.6s linear infinite forwards;
+}
+
+.activate.loading span svg:nth-child(2) { transform: translateY(-20px); }
+
+.activate.loading span svg:nth-child(3) {
+    opacity: 0;
+    transform: translateY(0) scale(0.6);
+}
+
+.activate.loading ul { transform: rotateX(90deg); }
+
+.activate.loading.done {
+    background: #3FDC75;
+    box-shadow: 0 4px 20px rgba(63, 220, 117, 0.15);
+}
+
+.activate.loading.done span {
+    background: #fff;
+    transition: background 0.1s ease 0s;
+}
+
+.activate.loading.done span:before {
+    background: #3FDC75;
+    transform: scale(0);
+}
+
+.activate.loading.done span svg:nth-child(1) {
+    -webkit-animation: none;
+    animation: none;
+}
+
+.activate.loading.done span svg:nth-child(3) {
+    fill: #3FDC75;
+    opacity: 1;
+    transform: scale(1);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s, opacity 0.4s ease 0.25s;
+}
+
+.activate.loading.done ul { transform: rotateX(180deg); }
+
+.activate ul {
+    display: inline-block;
+    height: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease;
+    vertical-align: top;
+    width: 70px;
+}
+
+.activate ul li {
+    --rotateX: 0deg;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    bottom: 0;
+    position: absolute;
+    top: 0;
+    transform: rotateX(var(--rotateX)) translateZ(10px);
+    transform-origin: 50% 50%;
+    width: 100%;
+}
+
+.activate ul li:nth-child(2) { --rotateX: -90deg; }
+
+.activate ul li:nth-child(3) { --rotateX: -180deg; }
+
+@-webkit-keyframes turn {
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes turn {
+    100% { transform: rotate(360deg); }
+}
+
+@-webkit-keyframes path {
+    100% { stroke-dashoffset: 0; }
+}
+
+@keyframes path {
+    100% { stroke-dashoffset: 0; }
+}
+
+/* End Upload File Button */
+
+.padding-top-10 {
+    padding-top: 10px;
+}
+
+.heading{
+    font-size:24px;
+    font-weight:bold;
+    padding-top: 5px;
+    padding-bottom: 15px;
+}
+
+#upload-button-container{
+    padding-top:15px;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+#file-upload-result {
+    padding-top: 5px;
+}

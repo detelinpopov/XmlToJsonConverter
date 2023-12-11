@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34221.43
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XMLFileConverterAPI", "XMLFileConverter\XMLFileConverterAPI.csproj", "{7988437A-90D6-46D2-82A0-33BD8806AA90}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Core\Core.csproj", "{71DA7D5C-59EC-4E66-A880-107EFD709D40}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interfaces", "Interfaces\Interfaces.csproj", "{EDC60998-485D-4326-A31B-A60566467B56}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{B7EFF0D1-4284-4040-9EB9-929E3F40AF7B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "Tests\Tests.csproj", "{92048500-001C-4D73-844D-5BC810FDB6E0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XMLFileConverterApp", "XMLFileConverterApp\XMLFileConverterApp.csproj", "{FC58F00D-F086-49D4-AA10-5D4B28055C5E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7988437A-90D6-46D2-82A0-33BD8806AA90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7988437A-90D6-46D2-82A0-33BD8806AA90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7988437A-90D6-46D2-82A0-33BD8806AA90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7988437A-90D6-46D2-82A0-33BD8806AA90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71DA7D5C-59EC-4E66-A880-107EFD709D40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71DA7D5C-59EC-4E66-A880-107EFD709D40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71DA7D5C-59EC-4E66-A880-107EFD709D40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71DA7D5C-59EC-4E66-A880-107EFD709D40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDC60998-485D-4326-A31B-A60566467B56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDC60998-485D-4326-A31B-A60566467B56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDC60998-485D-4326-A31B-A60566467B56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDC60998-485D-4326-A31B-A60566467B56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7EFF0D1-4284-4040-9EB9-929E3F40AF7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7EFF0D1-4284-4040-9EB9-929E3F40AF7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7EFF0D1-4284-4040-9EB9-929E3F40AF7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7EFF0D1-4284-4040-9EB9-929E3F40AF7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92048500-001C-4D73-844D-5BC810FDB6E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92048500-001C-4D73-844D-5BC810FDB6E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92048500-001C-4D73-844D-5BC810FDB6E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92048500-001C-4D73-844D-5BC810FDB6E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC58F00D-F086-49D4-AA10-5D4B28055C5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC58F00D-F086-49D4-AA10-5D4B28055C5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC58F00D-F086-49D4-AA10-5D4B28055C5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC58F00D-F086-49D4-AA10-5D4B28055C5E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6E7480E3-B14E-42C4-864A-2090EF955FB9}
+	EndGlobalSection
+EndGlobal
