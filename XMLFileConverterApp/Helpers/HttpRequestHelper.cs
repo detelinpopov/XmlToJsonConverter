@@ -1,4 +1,5 @@
-﻿using XMLFileConverterApp.Models;
+﻿using Core.Constants;
+using XMLFileConverterApp.Models;
 
 namespace XMLFileConverterApp.Helpers;
 
@@ -41,7 +42,7 @@ public static class HttpRequestHelper
         {
             result.StatusCode = 500;
             result.Success = false;
-            result.ResponseMessage = "An error occurred while uploading your file. The upload file API might be down.";
+            result.ResponseMessage = UserMessages.GeneralUploadFileError;
             return result;
         }
     }
