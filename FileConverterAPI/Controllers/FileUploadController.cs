@@ -16,11 +16,14 @@ public class FileUploadController : ControllerBase
 
     private readonly IFileUploadService _fileUploadService;
 
-    public FileUploadController(IConfiguration configuration, IFileConvertService fileConvertService, IFileUploadService fileUploadService)
+    private readonly IFileReaderService _fileReaderService;
+
+    public FileUploadController(IConfiguration configuration, IFileConvertService fileConvertService, IFileUploadService fileUploadService, IFileReaderService fileReaderService)
     {
         _configuration = configuration;
         _fileConvertService = fileConvertService;
         _fileUploadService = fileUploadService;
+        _fileReaderService = fileReaderService;
     }
 
     [HttpPost]
@@ -40,12 +43,11 @@ public class FileUploadController : ControllerBase
             return BadRequest(xmlToJsonConversionResult.GetErrorsAsString());
         }
 
-        var uploadTo = _configuration.GetValue<string>("ConvertFileSettings:UploadToPath");
         var saveFileModel = new UploadFileModel
         {
             Content = xmlToJsonConversionResult.JsonContent,
             FileName = file.FileName.Replace(".xml", ".json"),
-            UploadTo = uploadTo ?? "Uploads\\ConvertedJsonFiles"
+            UploadTo = GetUploadedFilesPath()
         };
 
         var uploadFileResult = await _fileUploadService.UploadFileAsync(saveFileModel);
@@ -55,6 +57,35 @@ public class FileUploadController : ControllerBase
         }
 
         return Ok(UserMessages.FileConvertedAndUploaded);
+    }
+
+
+    [HttpPost]
+    [Route("GetUploadedFiles")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(string), StatusCodes.Status400BadRequest)]
+    public IActionResult GetUploadedFiles()
+    {
+        var getUploadedFilesModel = new GetUploadedFilesModel { DirectoryUrl = GetUploadedFilesPath() };
+
+        var getUploadedFilesResult = _fileReaderService.GetUploadedFiles(getUploadedFilesModel);
+        if (!getUploadedFilesResult.Success)
+        {
+            return StatusCode(500, getUploadedFilesResult.GetErrorsAsString());
+        }
+
+        return Ok(getUploadedFilesResult);
+    }
+
+    private string GetUploadedFilesPath()
+    {
+        var path = _configuration.GetValue<string>("ConvertFileSettings:UploadToPath");
+        if (string.IsNullOrWhiteSpace(path))
+        {
+            path = "Uploads\\ConvertedJsonFiles";
+        }
+
+        return path;
     }
 }
 

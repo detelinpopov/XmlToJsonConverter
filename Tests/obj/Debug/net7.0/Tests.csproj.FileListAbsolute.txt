@@ -242,3 +242,4 @@ C:\Users\Detelin_Popov\Desktop\XmlToJsonConverter\Tests\bin\Debug\net7.0\FileCon
 C:\Users\Detelin_Popov\Desktop\XmlToJsonConverter\Tests\bin\Debug\net7.0\FileConverterAPI.exe
 C:\Users\Detelin_Popov\Desktop\XmlToJsonConverter\Tests\bin\Debug\net7.0\FileConverterAPI.dll
 C:\Users\Detelin_Popov\Desktop\XmlToJsonConverter\Tests\bin\Debug\net7.0\FileConverterAPI.pdb
+C:\Users\Detelin_Popov\Desktop\XmlToJsonConverter\Tests\bin\Debug\net7.0\Integration\TestUploadedFiles\validSample.json

@@ -3,5 +3,6 @@
 public enum ErrorType
 {
     ConvertFile,
-    UploadFile
+    UploadFile,
+    RetrieveFiles
 }

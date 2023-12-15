@@ -14,6 +14,8 @@ public class FileUploadControllerTests
 
     private readonly Mock<IFileUploadService> _fileUploadServiceMock;
 
+    private readonly Mock<IFileReaderService> _fileReaderServiceMock;
+
     private readonly FileUploadController _controller;
 
     public FileUploadControllerTests()
@@ -21,10 +23,11 @@ public class FileUploadControllerTests
         var configurationMock = new Mock<IConfiguration>();
         _fileConvertServiceMock = new Mock<IFileConvertService>();
         _fileUploadServiceMock = new Mock<IFileUploadService>();
+        _fileReaderServiceMock = new Mock<IFileReaderService>();
 
         configurationMock.Setup(c => c.GetSection(It.IsAny<string>())).Returns(new Mock<IConfigurationSection>().Object);
 
-        _controller = new FileUploadController(configurationMock.Object, _fileConvertServiceMock.Object, _fileUploadServiceMock.Object);
+        _controller = new FileUploadController(configurationMock.Object, _fileConvertServiceMock.Object, _fileUploadServiceMock.Object, _fileReaderServiceMock.Object);
     }
 
     [Fact]
@@ -130,5 +133,58 @@ public class FileUploadControllerTests
 
         // Assert
         Assert.IsAssignableFrom<BadRequestObjectResult>(actionResult);
+    }
+
+    [Fact]
+    public void GetUploadedFiles_CallsFileReaderService()
+    {
+        // Arrange
+        _fileReaderServiceMock.Setup(s => s.GetUploadedFiles(It.IsAny<GetUploadedFilesModel>()))
+            .Returns(new UploadedFileResult());
+
+        // Act
+        _controller.GetUploadedFiles();
+
+        // Assert
+        _fileReaderServiceMock.Verify(s => s.GetUploadedFiles(It.IsAny<GetUploadedFilesModel>()), Times.Once);
+    }
+
+    [Fact]
+    public void GetUploadedFiles_ReturnsValidResponse()
+    {
+        // Arrange
+        _fileReaderServiceMock.Setup(s => s.GetUploadedFiles(It.IsAny<GetUploadedFilesModel>()))
+            .Returns(new UploadedFileResult {Success = true});
+
+        // Act
+        var response = _controller.GetUploadedFiles();
+
+        // Assert
+        Assert.IsAssignableFrom<OkObjectResult>(response);
+    }
+
+    [Fact]
+    public void GetUploadedFiles_ReturnsObjectResult_WhenFilesNotRetrieved()
+    {
+        // Arrange
+        _fileReaderServiceMock.Setup(s => s.GetUploadedFiles(It.IsAny<GetUploadedFilesModel>()))
+            .Returns(new UploadedFileResult { Success = false });
+
+        // Act
+        var response = _controller.GetUploadedFiles();
+
+        // Assert
+        Assert.IsAssignableFrom<ObjectResult>(response);
+    }
+
+    [Fact]
+    public void GetUploadedFiles_ReturnsValidResponse_WhenFileReaderServiceThrowsException()
+    {
+        // Arrange
+        _fileReaderServiceMock.Setup(s => s.GetUploadedFiles(It.IsAny<GetUploadedFilesModel>()))
+            .Throws<Exception>();
+
+        // Act && Assert
+        Assert.Throws<Exception>(() => _controller.GetUploadedFiles());
     }
 }

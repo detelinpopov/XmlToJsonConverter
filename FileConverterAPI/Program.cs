@@ -13,6 +13,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IFileUploadService, FileUploadService>();
 builder.Services.AddScoped<IFileConvertService, FileConvertService>();
+builder.Services.AddScoped<IFileReaderService, FileReaderService>();
 
 var app = builder.Build();
 

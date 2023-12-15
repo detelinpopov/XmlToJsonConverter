@@ -57,8 +57,6 @@ public class FileConvertServiceTests
         Assert.Null(convertToJsonResult.JsonContent);
     }
 
-    // The provided file is not a valid XML document.
-
     [Fact]
     public void ConvertXmlToJson_ReturnsCorrectResult_WhenTheXmlFileContentTypeIsNotValid()
     {

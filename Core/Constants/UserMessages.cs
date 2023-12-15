@@ -9,4 +9,6 @@ public static class UserMessages
     public static string SaveJsonFileError = "An error occurred while saving the JSON file.";
 
     public static string GeneralUploadFileError = "An error occurred while uploading your file. The upload file API might be down.";
+
+    public static string GetFilesDirectoryNotFound = "Specified directory not found";
 }
